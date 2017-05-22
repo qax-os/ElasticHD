@@ -31,4 +31,8 @@ statik -src=../dist
 GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/elasticHD/main
 ```
 
+## 二进制文件下载
+
+[download windows 64位](https://github.com/farmerx/ElasticHD/blob/master/elasticHD_windows_64.exe)
+
 
