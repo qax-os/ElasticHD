@@ -33,6 +33,9 @@ GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/ela
 
 ## 二进制文件下载
 
-[download windows 64位](https://github.com/farmerx/ElasticHD/blob/master/elasticHD_windows_64.exe)
+请下载[download windows 64位](https://github.com/farmerx/ElasticHD/raw/master/elasticHD_windows_64.exe)
+请下载[download mac_OSX 64位](https://github.com/farmerx/ElasticHD/raw/master/elasticHD_OSX)
+请下载[download linux 64位](https://github.com/farmerx/ElasticHD/raw/master/elasticHD_linux)
+
 
 
