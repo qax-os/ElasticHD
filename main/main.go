@@ -31,7 +31,7 @@ func main() {
 			fmt.Println("Cant start server:", err)
 			os.Exit(1)
 		}
-	}(`127.0.0.1:9800`, mux)
+	}(`0.0.0.0:9800`, mux)
 	// 捕捉ctrl+C 退出信号
 	handleSignals()
 }

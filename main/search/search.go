@@ -293,7 +293,11 @@ func (se *Search) search(w http.ResponseWriter, r *http.Request) {
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
-	url := fmt.Sprintf(`/%s/%s/%s`, param.Indices, param.Types, param.Options)
+
+	url := fmt.Sprintf(`/%s/%s/%s`, strings.TrimSpace(param.Indices), strings.TrimSpace(param.Types), strings.TrimSpace(param.Options))
+	if param.Method == `GET` {
+		param.Body = ``
+	}
 	result, err := c.DoCommand(param.Method, url, nil, param.Body)
 	if err != nil {
 		w.Write(jsonEncode(0, map[string]interface{}{"info": err.Error()}))
