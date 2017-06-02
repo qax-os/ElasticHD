@@ -171,8 +171,10 @@ export default {
         JSON.stringify(JSON.parse(this.inputTextarea), null, 5)
         this.errorMessage = ''
       } catch (e) {
-        this.errorMessage = e.name + ': ' + e.message
-        return
+        if (this.inputMethod !== 'GET') {
+          this.errorMessage = e.name + ': ' + e.message
+          return
+        }
       }
       // $('#jsonView').JSONView(null)
       // var list = window.localStorage ? localStorage.getItem('elasticHDHistor') : new Array()

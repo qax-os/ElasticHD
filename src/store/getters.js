@@ -21,7 +21,10 @@ const getters = {
   showSpinner: state => state.searchx.showSpinner,
   IndexTemplateList: state => state.overviewx.IndexTemplateList,
   toggleMapping: state => state.mappingx.toggleMapping,
-  mappingInfo: state => state.mappingx.mappingInfo
+  mappingInfo: state => state.mappingx.mappingInfo,
+  dslBody: state => state.toolsx.dslBody,
+  sqlBody: state => state.toolsx.sqlBody,
+  currentError: state => state.toolsx.currentError
 }
 export default getters
 

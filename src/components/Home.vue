@@ -17,9 +17,9 @@
           <div v-else-if="activeIndex === 3">
             <Mapping></Mapping>
           </div>
-          <!--<div v-else-if="activeIndex === 4">
-            <Mapping></Mapping>
-          </div>-->
+          <div v-else-if="activeIndex === 4">
+            <Tools></Tools>
+          </div>
           <div v-else-if="activeIndex === 5">
             <Help></Help>
           </div>
@@ -38,6 +38,7 @@ import Search from './search'
 import Indices from './indices'
 import Mapping from './mapping'
 import Help from './help'
+import Tools from './tools'
 export default {
   name: 'home',
   components: {
@@ -48,7 +49,8 @@ export default {
     Search,
     Indices,
     Mapping,
-    Help
+    Help,
+    Tools
   },
   computed: {
     ...mapGetters([

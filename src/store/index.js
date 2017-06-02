@@ -9,6 +9,7 @@ import toolsbarx from './modules/toolsbarx'
 import overviewx from './modules/overviewx'
 import searchx from './modules/searchx'
 import mappingx from './modules/mappingx'
+import toolsx from './modules/toolsx'
 
 Vue.use(Vuex)
 
@@ -27,6 +28,7 @@ export default new Vuex.Store({
     toolsbarx,
     overviewx,
     searchx,
-    mappingx
+    mappingx,
+    toolsx
   }
 })

@@ -10,6 +10,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/farmerx/elasticsql"
 	"github.com/mattbaird/elastigo/lib"
 )
 
@@ -41,6 +42,22 @@ func (se *Search) RegHandler() {
 	se.mux.HandleFunc("/_search", se.search)
 	se.mux.HandleFunc("/_upload/template", se.uploadTemplate)
 	se.mux.HandleFunc("/_template/handle", se.handleTemplate)
+	se.mux.HandleFunc("/_sql2dsl", se.sqlConvert)
+}
+
+func (se *Search) sqlConvert(w http.ResponseWriter, r *http.Request) {
+	param, err := getParams(r)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"error": "服务端错误：参数解析失败。"}))
+		return
+	}
+	esql := elasticsql.NewElasticSQL(elasticsql.InitOptions{})
+	_, dsl, err := esql.SQLConvert(param.SQL)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"error": err.Error()}))
+		return
+	}
+	w.Write(jsonEncode(0, []interface{}{dsl}))
 }
 
 // {

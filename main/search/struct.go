@@ -8,6 +8,7 @@ type Params struct {
 	Method     string `json:"method"`
 	Options    string `json:"options"`
 	Body       string `json:"body"`
+	SQL        string `json:"sql"`
 }
 
 // ReturnResult 返回的结果
