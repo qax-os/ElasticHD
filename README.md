@@ -1,19 +1,14 @@
 ElasticHD
 -----------
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/farmerx/elasticHD/main)
-> ElasticHD 是一款 ElasticSearch的可视化应用。支持如下功能：
+> ElasticHD 是一款 ElasticSearch的可视化应用。不依赖ES的插件安装，更便捷；导航栏直接填写对应的ES IP和端口就可以操作Es了。目前支持如下功能：
  * ES 实时搜索
  * ES DashBoard 数据可视化
  * ES Index Template (在线修改、查看、上传）
  * SQL Converts to DSL
  * ES 基本查询文档
  
-
-
-
-
-## 项目简介
-ElasticHD 是ElasticSearch的可视化DashBoard， 支持Es状态监控、实时搜索、Index Template 快捷替换&查看、支持Index list、支持sql 查询。
+## ElasticHD应用页面
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120044177.png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120114338.png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120147401.png)
