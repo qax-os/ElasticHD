@@ -1,6 +1,9 @@
 ElasticHD
 -----------
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/farmerx/elasticHD/main)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Luxurioust/aurora)](https://goreportcard.com/report/github.com/farmerx/elasticHD/main)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/Luxurioust/aurora/blob/master/LICENSE)
+[![Release](https://img.shields.io/github/release/Luxurioust/aurora.svg?label=Release)](https://github.com/farmerx/elasticHD/releases)
 > ElasticHD 是一款 ElasticSearch的可视化应用。不依赖ES的插件安装，更便捷；导航栏直接填写对应的ES IP和端口就可以操作Es了。目前支持如下功能：
  * ES 实时搜索
  * ES DashBoard 数据可视化
