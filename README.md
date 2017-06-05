@@ -14,6 +14,13 @@ ElasticHD
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120147401.png)
 ![image](https://raw.githubusercontent.com/farmerx/ElasticHD/master/WX20170605-105148.png)
 
+## Installation
+
+[Precompiled binaries](https://github.com/farmerx/elasticHD/releases) for supported operating systems are available.
+
+## Contributing
+
+Contributions are welcome! Open a pull request to fix a bug, or open an issue to discuss a new feature or change.
 
 ## Get Start
 ```
