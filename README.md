@@ -20,7 +20,7 @@ ElasticHD
 
 Contributions are welcome! Open a pull request to fix a bug, or open an issue to discuss a new feature or change.
 
-## Get Start
+## 源码编译
 ```
 # 需要go环境
 go get https://github.com/farmerx/ElasticHD
