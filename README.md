@@ -12,33 +12,26 @@ ElasticHD
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120044177.png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120114338.png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120147401.png)
+![image](https://raw.githubusercontent.com/farmerx/ElasticHD/master/WX20170605-105148.png)
 
-## 前端页面查看
+
+## Get Start
 ```
+# 需要go环境
 go get https://github.com/farmerx/ElasticHD
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8090
-npm run dev
-```
-
-## ElasticHD build set
-```
-go get https://github.com/farmerx/ElasticHD
-# 进入程序源码目录
+# 进入到应用目录下
 cd ElasticHD
-# install dependencies
 npm install
 # build vue 源码
 npm run build
 # 进入到服务端程序目录
-cd main
-# 使用statik 压缩编译好的程序
+cd ./main
+# 使用statik 压缩编译好的程序(github上的一款go应用)
 statik -src=../dist
 # go build
 GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/elasticHD/main
 ```
+
 
 ## 二进制文件下载
 
