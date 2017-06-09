@@ -14,25 +14,96 @@ export default {
       content: `
 ElasticHD
 -----------
-[![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/farmerx/elasticHD/main)
-> ElasticHD 是一款 ElasticSearch的可视化应用。不依赖ES的插件安装，更便捷；导航栏直接填写对应的ES IP和端口就可以操作Es了。目前支持如下功能：
+[![Build Status](https://travis-ci.org/farmerx/ElasticHD.svg?branch=master)](https://travis-ci.org/farmerx/ElasticHD)
+[![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/farmerx/ElasticHD/main)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Luxurioust/aurora)](https://goreportcard.com/report/github.com/farmerx/elasticHD/main)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/farmerx/elasticHD/blob/master/LICENSE)
+[![Release](https://img.shields.io/github/release/elasticHD/elasticHD.svg?label=Release)](https://github.com/farmerx/elasticHD/releases)
+
+>ElasticHD 是一款 ElasticSearch的可视化应用。不依赖ES的插件安装，更便捷；导航栏直接填写对应的ES IP和端口就可以操作Es了。目前支持如下功能：
  * ES 实时搜索
  * ES DashBoard 数据可视化
  * ES Index Template (在线修改、查看、上传）
  * SQL Converts to DSL
  * ES 基本查询文档
 
-## Installation
+### Basic Usage
+ * linux and MacOs use ElasticHD
+\`\`\`
+ 下载对应的elasticHD版本，unzip xxx_elasticHd_xxx.zip
+ 修改权限 chmod 0777 ElasticHD
+ 可指定ip端口运行elastichd ./ElasticHD -p 127.0.0.1:9800 默认ip和端口也是这个
+ \`\`\`
+ * windows
+\`\`\`
+ 直接下载对应windows版本,解压，双击运行。当然想指定端口的话同linux
+ \`\`\`
 
-[Precompiled binaries](https://github.com/farmerx/elasticHD/releases) for supported operating systems are available.
+### ElasticHD SQL Converts to ElasticSearch DSL Usage
+#### SQL Features Support:
+- [x] SQL Select
+- [x] SQL Where
+- [x] SQL Order BySQL
+- [x] SQL Group By
+- [x] SQL AND & OR
+- [x] SQL Like & NOT Like
+- [x] SQL COUNT distinct
+- [x] SQL In & Not In
+- [x] SQL Between
+- [x] SQL avg()、count(*), count(field), min(field), max(field)
 
-## Contributing
+#### Beyond SQL Features Support：
+- [x] ES TopHits
+- [x] ES date_histogram
+- [x] ES STATS
+- [x] ES RANGE
+- [x] ES DATE_RANGE
 
-Contributions are welcome! Open a pull request to fix a bug, or open an issue to discuss a new feature or change.
+#### SQL Usage
+Query
+ \`\`\`
+SELECT * FROM test WHERE a=1 and b="c" and create_time between '2015-01-01T00:00:00+0800' and '2016-01-01T00:00:00+0800' and process_id > 1 order by id desc limit 100,10
+ \`\`\`
+Aggregation
+ \`\`\`
+SELECT avg(age),min(age),max(age),count(student),count(distinct student) FROM test group by grade,class limit 10
+ \`\`\`
+Beyond SQL
+ * range age group 20-25,25-30,30-35,35-40
+    \`\`\`
+SELECT COUNT(age) FROM bank GROUP BY range(age, 20,25,30,35,40)
+    \`\`\`
+ * range date group by your config
 
-## ElasticSearch 基本查询语法
+    \`\`\`
+SELECT online FROM online GROUP BY date_range(field="insert_time",format="yyyy-MM-dd" ,"2014-08-18","2014-08-17","now-8d","now-7d","now-6d","now")
+    \`\`\`
+ * range date group by day
+
+    \`\`\`
+SELECT * FROM test GROUP BY date_histogram(field="changeTime",interval="1h",format="yyyy-MM-dd HH:mm:ss")
+    \`\`\`
+ * stats
+
+    \`\`\`
+SELECT online FROM online GROUP BY stats(field="grade")
+    \`\`\`
+ * topHits
+
+    \`\`\`
+SELECT top_hits(field="class", hitssort="age:desc", taglimit = "10", hitslimit = "1", _source="name,age,class,gender") FROM school
+    \`\`\`
+
+*Improvement : now the query DSL is much more flat*
+
+### Contributing
+
+> Contributions are welcome! Open a pull request to fix a bug, or open an issue to discuss a new feature or change.
+
+### ElasticSearch 基本查询语法
 
 ### 基本搜索
+ \`\`\`
 {
     "query": {
         "bool": {
@@ -46,8 +117,9 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
     "from": 0,
     "size": 1
 }
-
+ \`\`\`
 ### Group BY
+ \`\`\`
 {
     "query": {
         "bool": {
@@ -77,9 +149,10 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
-
+ \`\`\`
 
 ### Distinct Count
+ \`\`\`
 {
     "query": {
         "bool": {
@@ -100,13 +173,17 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
+ \`\`\`
 ### 全文搜索
+ \`\`\`
 {
     "query" : {
         "query_string" : {"query" : "name:rcx"}
     }
 }
+ \`\`\`
 ### match查询
+ \`\`\`
 {
     "query": {
         "match": {
@@ -114,7 +191,9 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
+ \`\`\`
 ### 通配符查询
+ \`\`\`
 {
     "query": {
         "wildcard": {
@@ -122,7 +201,9 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
+ \`\`\`
 ### 范围查询
+ \`\`\`
 {
     "query": {
         "range": {
@@ -133,7 +214,9 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
+ \`\`\`
 ### 正则表达式查询
+ \`\`\`
 {
     "query": {
         "regexp": {
@@ -144,7 +227,9 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
+ \`\`\`
 ### 布尔查询
+ \`\`\`
 {
     "query": {
         "bool": {
@@ -169,6 +254,7 @@ Contributions are welcome! Open a pull request to fix a bug, or open an issue to
         }
     }
 }
+ \`\`\`
 `
     }
   },
