@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"strings"
 
-	"360.cn/elasticHD/main/search"
-	_ "360.cn/elasticHD/main/statik"
+	"github.com/elasticHD/main/search"
+	_ "github.com/elasticHD/main/statik"
 	"github.com/rakyll/statik/fs"
 )
 
