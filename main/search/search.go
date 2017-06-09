@@ -162,7 +162,9 @@ func (se *Search) clusterStats(w http.ResponseWriter, r *http.Request) {
 	elasticStats.JvmMemMaxUse = stats.Nodes.Jvm.Mem.HeapMaxInBytes
 	elasticStats.JvmMemUsed = stats.Nodes.Jvm.Mem.HeapUsedInBytes
 	elasticStats.JvmThreads = stats.Nodes.Jvm.Threads
-	elasticStats.JvmVersions = stats.Nodes.Jvm.Versions
+	for _, item := range stats.Nodes.Jvm.Versions {
+		elasticStats.JvmVersions += item.Version + ","
+	}
 	elasticStats.MemFree = stats.Nodes.Os.Mem.FreeInBytes
 	elasticStats.MemToatl = stats.Nodes.Os.Mem.TotalInBytes
 	elasticStats.MemUsed = stats.Nodes.Os.Mem.UsedInBytes
@@ -171,7 +173,9 @@ func (se *Search) clusterStats(w http.ResponseWriter, r *http.Request) {
 	elasticStats.Shards = stats.Indices.Shards.Total
 	elasticStats.Size = stats.Indices.Store.Size
 	elasticStats.Status = stats.Status
-	elasticStats.Systems = stats.Nodes.Os.Names
+	for _, item := range stats.Nodes.Os.Names {
+		elasticStats.Systems += item.Name + ","
+	}
 	elasticStats.Versions = stats.Nodes.Versions
 	elasticStats.Timestamp = stats.Timestamp
 	w.Write(jsonEncode(0, elasticStats))

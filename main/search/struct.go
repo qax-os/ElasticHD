@@ -41,7 +41,7 @@ type Stats struct {
 	Size             string      `json:"size"`         // 内存使用
 	Indices          int64       `json:"indices"`      // 索引数
 	Versions         []string    `json:"versions"`     // elasticsearch 版本们
-	Systems          interface{} `json:"systems"`      // 系统类型
+	Systems          string      `json:"systems"`      // 系统类型
 	MemToatl         int64       `json:"memtotal"`     // 内存大小
 	MemFree          int64       `json:"memfree"`      // 内存空闲
 	MemUsed          int64       `json:"memused"`      // 内存占用
@@ -53,10 +53,25 @@ type Stats struct {
 	JvmMaxUptime     string      `json:"jvm_max_uptime"`
 	JvmMemUsed       int64       `json:"jvm_mem_used"`
 	JvmMemMaxUse     int64       `json:"jvm_mem_max_use"`
-	JvmVersions      interface{} `json:"jvm_versions"`
+	JvmVersions      string      `json:"jvm_versions"`
 	FieldDataMemUsed int64       `json:"fielddata_mem_used"`
 	QueryCache       interface{} `json:"query_cache"`
 	Timestamp        int64       `json:"timestamp"`
+}
+
+// System ...
+type System struct {
+	Name  string `json:"name"`
+	Count int    `json:"count"`
+}
+
+// JVMVersion ...
+type JVMVersion struct {
+	Version   string `json:"version"`
+	VMName    string `json:"vm_name"`
+	VMVersion string `json:"vm_version"`
+	VMVendor  string `json:"vm_vendor"`
+	Count     int    `json:"count"`
 }
 
 // ClusterStats 集群状态

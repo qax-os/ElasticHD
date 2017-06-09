@@ -85,8 +85,8 @@ const overviewx = {
     SET_PANEL_WIDGET: (state) => {
       state.panelWidget = [
         {fontAwesome: 'fa fa-line-chart fa-3x', value: state.tShard, name: 'Total Shards', colors: 'panel-pink'},
-        {fontAwesome: 'fa fa-check-circle fa-3x', value: state.sShard, name: 'Successful Shards', colors: 'panel-blue'},
-        {fontAwesome: 'fa fa-statebase fa-3x', value: state.indices, name: 'indices', colors: 'panel-yellow'},
+        {fontAwesome: 'fa fa-check-circle fa-3x', value: state.tShard, name: 'Successful Shards', colors: 'panel-blue'},
+        {fontAwesome: 'fa fa-database fa-3x', value: state.indices, name: 'indices', colors: 'panel-yellow'},
         {fontAwesome: 'fa fa-list-ul fa-3x', value: state.templates, name: 'Templates', colors: 'panel-teal'},
         {fontAwesome: 'fa fa-file-text fa-3x', value: state.documents, name: 'Documents', colors: 'panel-orange'},
         {fontAwesome: 'fa fa-save fa-3x', value: state.size, name: 'Total Size', colors: 'panel-red'}
@@ -97,9 +97,9 @@ const overviewx = {
         {name: 'clusterName', value: data.clusterName},
         {name: 'timestamp', value: data.timestamp},
         {name: 'es versions', value: data.versions},
-        {name: 'os', value: data.os},
+        {name: 'os', value: data.systems},
         {name: 'jvm max uptime', value: data.uptime},
-        {name: 'jvm versions', value: data.jvmVersion},
+        {name: 'jvm versions', value: data.jvm_versions},
         {name: 'jvm threads', value: data.threads}
       ]
     },
@@ -130,7 +130,7 @@ const overviewx = {
             commit('SET_PANEL_DOCUMENTS', response.body.data.docs)
             commit('SET_PANEL_SIZE', response.body.data.size)
             commit('SET_PANEL_WIDGET')
-            var statsInfo = {clusterName: response.body.data.cluster_name, timestamp: response.body.data.timestamp, versions: response.body.data.versions.join(','), os: '', uptime: response.body.data.jvm_max_uptime, jvmVersion: '', threads: response.body.data.jvm_threads}
+            var statsInfo = {clusterName: response.body.data.cluster_name, timestamp: response.body.data.timestamp, versions: response.body.data.versions.join(','), jvm_versions: response.body.data.jvm_versions, uptime: response.body.data.jvm_max_uptime, systems: response.body.data.systems, threads: response.body.data.jvm_threads}
             commit('SET_STATS_INFO', statsInfo)
             var chart = {
               jvm_mem_max_use: response.body.data.jvm_mem_max_use,
