@@ -71,7 +71,7 @@ type Settings struct {
 
 type Path struct {
 	Logs string `json:"logs,omitempty"`
-	home string `json:"home,omitempty"`
+	Home string `json:"home,omitempty"`
 }
 
 type Cluster struct {
