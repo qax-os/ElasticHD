@@ -36,7 +36,7 @@ ElasticHD
 
 Contributions are welcome! Open a pull request to fix a bug, or open an issue to discuss a new feature or change.
 
-## ElasticHD SQL Converts to ElasticSearch DSL 
+## ElasticHD SQL Converts to ElasticSearch DSL Usage
 
 ### SQL Features Support:
 
