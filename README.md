@@ -19,11 +19,13 @@ ElasticHD
 
 ## Basic Usage
  * linux and MacOs use ElasticHD 
- >  下载对应的elasticHD版本，unzip xxx_elasticHd_xxx.zip
- >  修改权限 chmod 0777 ElasticHD
- >  可指定ip端口运行elastichd ./ElasticHD -p 127.0.0.1:9800 默认 ip和端口也是这个
+ ```  
+ 下载对应的elasticHD版本，unzip xxx_elasticHd_xxx.zip
+ 修改权限 chmod 0777 ElasticHD
+ 可指定ip端口运行elastichd ./ElasticHD -p 127.0.0.1:9800 默认 ip和端口也是这个
+ ```
  * windows
- > 直接下载对应windows版本,解压，双击运行。当然想指定端口的话同linux
+ ```直接下载对应windows版本,解压，双击运行。当然想指定端口的话同linux```
 
 ## Es version support
 > 测试过elasticsearch 1.5版本到5.2.1的版本都能正常使用。 关于 sql 转化成 dsl　马上会出elasticHD 1.1版本修复一些兼容性错误。
