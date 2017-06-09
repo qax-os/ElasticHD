@@ -7,7 +7,7 @@ func NewHighlight() *HighlightDsl {
 }
 
 type HighlightDsl struct {
-	Settings  *HighlightEmbed           `-`
+	Settings  *HighlightEmbed
 	TagSchema string                    `json:"tag_schema,omitempty"`
 	Fields    map[string]HighlightEmbed `json:"fields,omitempty"`
 }

@@ -53,7 +53,7 @@ func FacetRange(field string) *RangeDsl {
 type FacetDsl struct {
 	size   string
 	Terms  map[string]*Term     `json:"terms,omitempty"`
-	Ranges map[string]*RangeDsl `json:"terms,omitempty"`
+	Ranges map[string]*RangeDsl `json:"ranges,omitempty"`
 }
 
 type RangeDsl struct {

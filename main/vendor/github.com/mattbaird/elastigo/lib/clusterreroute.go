@@ -25,7 +25,7 @@ func (c *Conn) Reroute(dryRun bool, commands Commands) (ClusterHealthResponse, e
 	var retval ClusterHealthResponse
 
 	if len(commands.Commands) > 0 {
-		url = fmt.Sprintf("/_cluster/reroute%s&%s", dryRunOption(dryRun))
+		url = fmt.Sprintf("/_cluster/reroute%s&%s", dryRunOption(dryRun), ``)
 	} else {
 		return retval, errors.New("Must pass at least one command")
 	}
