@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/elasticHD/main/search"
-	_ "github.com/elasticHD/main/statik"
+	"github.com/farmerx/ElasticHD/main/search"
+	_ "github.com/farmerx/ElasticHD/main/statik"
 	"github.com/rakyll/statik/fs"
 )
 
