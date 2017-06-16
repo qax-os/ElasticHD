@@ -16,6 +16,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-vue": "^0.14.0",
+    "echarts": "^3.6.2",
     "elasticsearch": "^13.0.0",
     "element-ui": "^1.2.9",
     "font-awesome": "^4.7.0",
