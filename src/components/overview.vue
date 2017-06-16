@@ -89,7 +89,15 @@
                             <el-table-column prop="status" label="Status"></el-table-column>
                             <el-table-column label="操作">
                             <template scope="scope">
-                                <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                                <el-popover ref="popover{{$index}}" placement="top" width="160" v-model="scope.row.visible" trigger="click">
+                                  <p>这个索引确定删除吗？Are you sure?</p>
+                                  <div style="text-align: right; margin: 0">
+                                    <el-button size="mini" type="text" @click="scope.row.visible = false">取消</el-button>
+                                    <el-button type="primary" size="mini" @click="handleDelete(scope.$index, scope.row)">确定</el-button>
+                                  </div>
+                                </el-popover>
+                                <el-button size="small" type="danger" v-popover:popover{{$index}} >删除</el-button>
+                                <!--<el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>-->
                             </template>
                             </el-table-column>
                         </el-table-column>
@@ -119,7 +127,9 @@ export default {
       'serverhost',
       'charts',
       'templateInfo',
-      'indexList'
+      'indexList',
+      'DeleteIndexSuccess',
+      'DeleteIndexError'
     ])
   },
   created: function () {
@@ -136,6 +146,12 @@ export default {
     },
     templateInfo (val, oldval) {
       echarts.init(document.getElementById('temp-chart')).setOption(this.tempChart(this.templateInfo))
+    },
+    DeleteIndexSuccess () {
+      this.$message.success(this.DeleteIndexSuccess)
+    },
+    DeleteIndexError () {
+      this.$message.error(this.DeleteIndexError)
     }
   },
   mounted: function () {
@@ -143,6 +159,11 @@ export default {
     echarts.init(document.getElementById('temp-chart')).setOption(this.tempChart(this.templateInfo))
   },
   methods: {
+    handleDelete (index, row) {
+      row.visible = false
+      var tmp = {'url': '/_indices/delete', 'index': row.index, host: this.serverhost}
+      this.$store.dispatch('DeleteIndexByName', tmp)
+    },
     circle: function (charts) {
       var labelFromatter = {
         normal: {

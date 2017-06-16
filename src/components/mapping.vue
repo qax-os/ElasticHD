@@ -1,58 +1,56 @@
 <template>
-   <section id="mapping-view">
-        <el-row :gutter="10">
-              <el-col :xs="24" :sm="24" :md="5" :lg="5">
-                    <el-upload class="upload-demo" drag :action="action"
-                      :on-change="handleChange"
-                      :file-list="fileList"
-                      :before-upload="beforeFileUpload"
-                      :on-success="fileUploadSuccess"
-                      :on-error="fileUploadError"
-                      >
-                        <i class="el-icon-upload"></i>
-                        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                        <div class="el-upload__tip"style="background-color:#ccc;" slot="tip">更新ElasticSerach Index Template: 要求只能上传application/json文件、不超过2M、且文件名是对应的Index Template名称</div>
-                     </el-upload>
-              </el-col>
-              <el-col :xs="24" :sm="24" :md="19" :lg="19" style="background-color:#ffffff;">
-                    <!--<div style="background-color:#ffffff; margin:0 auto; width: 90%" >-->
-                      <div class="chart" id="temp-chartx" style="width: 100%; height:275px; "></div>
-                    <!--</div>-->
-                 </el-col>
-        </el-row>
-        <hr>
-        <el-row :gutter="10">
-              <el-col :xs="24" :sm="24" :md="8" :lg="5">
-                <el-card :body-style="{ padding: '0px' }">
-                <img src="../assets/hero.svg" class="image">
-                <div style="padding: 14px;">
-                    <span style="text-align:center;">Indices Template 官方定义:</span>
-                    <p class="text-content">
-                        &nbsp;&nbsp;Index templates allow you to define templates that will automatically be applied when new indices are created. The templates include both settings and mappings, and a simple pattern template that controls whether the template should be applied to the new index.
-                    </p>
-                </div>
-                </el-card>
-              </el-col>
-              <el-col :xs="24" :sm="24" :md="16" :lg="19">
-                  <el-table :data="IndexTemplateList" border style="width: 100%">
-                        <el-table-column label="Index Template List【索引模板列表】" >
-                            <el-table-column prop="name" label="Name" width="220"></el-table-column>
-                            <el-table-column prop="type" label="Types"></el-table-column>
-                            <el-table-column label="操作" width="200">
-                            <template scope="scope">
-                                <el-button size="small" type="success" @click="handleSee(scope.$index, scope.row)">查看</el-button>
-                                <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-                            </template>
-                            </el-table-column>
-                        </el-table-column>
-                    </el-table>
-              </el-col>
-        </el-row>
-        <el-dialog title="Index Mapping Info" v-model="showMapping">
-            <div id="mappinginfo">{{ mappingInfo}}</div>
-        </el-dialog>
-   </section>
+  <section id="mapping-view">
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="24" :md="5" :lg="5">
+        <el-upload class="upload-demo" drag :action="action" :on-change="handleChange" :file-list="fileList" :before-upload="beforeFileUpload"
+          :on-success="fileUploadSuccess" :on-error="fileUploadError">
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div class="el-upload__tip" style="background-color:#ccc;" slot="tip">更新ElasticSerach Index Template: 要求只能上传application/json文件、不超过2M、且文件名是对应的Index Template名称</div>
+        </el-upload>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="19" :lg="19" style="background-color:#ffffff;">
+        <!--<div style="background-color:#ffffff; margin:0 auto; width: 90%" >-->
+        <div class="chart" id="temp-chartx" style="width: 100%; height:275px; "></div>
+        <!--</div>-->
+      </el-col>
+    </el-row>
+    <hr>
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="24" :md="8" :lg="5">
+        <el-card :body-style="{ padding: '0px' }">
+          <img src="../assets/hero.svg" class="image">
+          <div style="padding: 14px;">
+            <span style="text-align:center;">Indices Template 官方定义:</span>
+            <p class="text-content">
+              &nbsp;&nbsp;Index templates allow you to define templates that will automatically be applied when new indices are created.
+              The templates include both settings and mappings, and a simple pattern template that controls whether the template
+              should be applied to the new index.
+            </p>
+          </div>
+        </el-card>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="16" :lg="19">
+        <el-table :data="IndexTemplateList" border style="width: 100%">
+          <el-table-column label="Index Template List【索引模板列表】">
+            <el-table-column prop="name" label="Name" width="220"></el-table-column>
+            <el-table-column prop="type" label="Types"></el-table-column>
+            <el-table-column label="操作" width="200">
+              <template scope="scope">
+                <el-button size="small" type="success" @click="handleSee(scope.$index, scope.row)">查看</el-button>
+                <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+              </template>
+            </el-table-column>
+          </el-table-column>
+        </el-table>
+      </el-col>
+    </el-row>
+    <el-dialog title="Index Mapping Info" v-model="showMapping">
+      <div id="mappinginfo">{{ mappingInfo}}</div>
+    </el-dialog>
+  </section>
 </template>
+
 
 <script>
 import $ from 'jquery'

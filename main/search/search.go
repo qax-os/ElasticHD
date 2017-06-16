@@ -43,6 +43,7 @@ func (se *Search) RegHandler() {
 	se.mux.HandleFunc("/_upload/template", se.uploadTemplate)
 	se.mux.HandleFunc("/_template/handle", se.handleTemplate)
 	se.mux.HandleFunc("/_sql2dsl", se.sqlConvert)
+	se.mux.HandleFunc("/_indices/delete", se.indexDelete)
 }
 
 func (se *Search) sqlConvert(w http.ResponseWriter, r *http.Request) {
@@ -280,9 +281,9 @@ func (se *Search) indices(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	sort.Stable(indices)
-	var indexes = make([]map[string]string, 0)
+	var indexes = make([]map[string]interface{}, 0)
 	for _, value := range indices {
-		indexes = append(indexes, map[string]string{
+		indexes = append(indexes, map[string]interface{}{
 			`docs`:    value.Count,
 			`delete`:  value.Delete,
 			`health`:  value.Health,
@@ -293,6 +294,7 @@ func (se *Search) indices(w http.ResponseWriter, r *http.Request) {
 			`pri`:     value.Pri,
 			`prisize`: value.PriSize,
 			`rep`:     value.Rep,
+			`visible`: false,
 		})
 	}
 	w.Write(jsonEncode(0, indexes))
@@ -392,4 +394,34 @@ func (s indicesSort) Less(i, j int) bool {
 		return true
 	}
 	return ix[len(ix)-1] > jx[len(jx)-1]
+}
+
+// delete Index ...
+func (se *Search) indexDelete(w http.ResponseWriter, r *http.Request) {
+	param, err := getParams(r)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	u, err := url.Parse(param.Serverhost)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	c := elastigo.NewConn()
+	c.Domain = strings.Split(u.Host, ":")[0]
+	c.Port = strings.Split(u.Host, ":")[1]
+	c.DecayDuration = 0
+	url := fmt.Sprintf(`/%s`, strings.TrimSpace(param.Index))
+	result, err := c.DoCommand(`DELETE`, url, nil, nil)
+	if err != nil {
+		w.Write(jsonEncode(0, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	var dBody interface{}
+	if err := json.Unmarshal(result, &dBody); err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	w.Write(jsonEncode(0, dBody))
 }

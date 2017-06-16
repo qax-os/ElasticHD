@@ -9,6 +9,7 @@ type Params struct {
 	Options    string `json:"options"`
 	Body       string `json:"body"`
 	SQL        string `json:"sql"`
+	Index      string `json:"index"`
 }
 
 // ReturnResult 返回的结果
