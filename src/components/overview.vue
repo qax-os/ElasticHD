@@ -18,35 +18,34 @@
                     </div>
                 </el-col>
             </el-row>
-            <hr>
-            <el-row :gutter="10">
-                 <el-col :xs="24" :sm="24" :md="12" :lg="12">
+            <el-row >
+                 <el-col :xs="24" :sm="24" :md="24" :lg="24">
                     <div style="background-color:#ffffff;">
-                      <div class="chart" id="cpu-chart" style="width: 100%; height:325px;"></div>
+                      <div class="chart" id="cpu-chart" style="width: 100%; height:300px;"></div>
                     </div>
                  </el-col>
-                 <el-col :xs="24" :sm="12" :md="6" :lg="6">
-                     <el-table :data="clusterInfo" height="325" border style="width: 100%">
+                 <el-col :xs="24" :sm="12" :md="12" :lg="12">
+                     <el-table :data="clusterInfo"  border style="width: 100%">
                         <el-table-column prop="name" label="Cluster Health" width="200"> </el-table-column>
                         <el-table-column prop="value"> </el-table-column>
                     </el-table>
                  </el-col>
-                  <el-col :xs="24" :sm="12" :md="6" :lg="6">
-                     <el-table :data="statsInfo" height="325" border style="width: 100%">
+                  <el-col :xs="24" :sm="12" :md="12" :lg="12">
+                     <el-table :data="statsInfo"  border style="width: 100%">
                         <el-table-column prop="name" label="ElasticSearch Stats Info" width="200"> </el-table-column>
                         <el-table-column prop="value"> </el-table-column>
                     </el-table>
                  </el-col>
             </el-row>
-            <hr>
-            <el-row :gutter="10">
+            <el-row >
                  <el-col :xs="24" :sm="24" :md="12" :lg="12">
                     <div style="background-color:#ffffff;">
-                      <div class="chart" id="temp-chart" style="width: 100%; height:350px;"></div>
+                      <p class="overview-p"><b>Index Templates中Type个数统计</b></p>
+                      <div class="chart" id="temp-chart" style="width: 100%; height:401px;"></div>
                     </div>
                  </el-col>
                  <el-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <el-table :data="indexList.slice(0, 6)" border style="width: 100%" height="350">
+                    <el-table :data="indexList.slice(0, 6)" border style="width: 100%" height="450">
                         <el-table-column label="Index list" >
                             <el-table-column type="expand">
                                 <template scope="props">
@@ -252,7 +251,7 @@ export default {
           ]
         },
         title: {
-          text: 'ElasticSearch Cluster Stats',
+          text: 'ElasticSearch Cluster Status',
           subtext: '内存,硬盘,JVM状态',
           x: 'center'
         },
@@ -318,11 +317,6 @@ export default {
     },
     tempChart: function (templateInfo) {
       var tempOption = {
-        title: {
-          text: '数据模板中Type个数统计',
-          subtext: '',
-          x: 'center'
-        },
         color: ['#3398DB'],
         tooltip: {
           trigger: 'axis',
@@ -471,4 +465,15 @@ export default {
     margin-bottom: 0;
     width: 50%;
   }
+.overview-p{
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    line-height: 39px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #eef1f6;
+    border: 1px solid #dfe6ec;
+    margin-right: 20px;
+    padding: 0 20px;
+}
 </style>

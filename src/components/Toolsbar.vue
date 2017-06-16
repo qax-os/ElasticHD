@@ -70,7 +70,7 @@ export default {
 
 <style>
 #tools {
-    margin-left: 80px
+    margin-left: 80px;
 }
 
 #tools #breadcrumb {
@@ -80,12 +80,16 @@ export default {
     -o-border-radius: 0;
     border-radius: 0;
     padding: 15px 20px 15px 20px;
-    border-bottom: 1px solid #dddddd
+    border-bottom: 1px solid #DFE7EC
 }
 
 #tools #breadcrumb .title {
     font-weight: 800;
-    color: #1abc9c
+    color: #1abc9c;
+}
+#tools .breadcrumb{
+    /*// 2c3e50*/
+    background-color: #f1f4f7;
 }
 
 #tools #toolbar {

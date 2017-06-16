@@ -61,6 +61,9 @@ export default {
 </script>
 
 <style>
+  .container-fluid{
+    background-color: #2c3e50;
+  }
   #elastic-logo-color {
     color:#1DC07F
   }

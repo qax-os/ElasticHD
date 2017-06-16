@@ -68,10 +68,10 @@ export default {
 body { padding-top: 70px; }
 #wrapper {
     position: absolute;
-    top: 70px;
+    top: 55px;
     bottom: 0;
-    left: 20px;
-    right: 20px;
+    left: 5px;
+    right: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     -moz-border-radius-topleft: 15px;
     -webkit-border-top-left-radius: 15px;

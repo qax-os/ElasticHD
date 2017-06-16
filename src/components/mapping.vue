@@ -1,7 +1,7 @@
 <template>
    <section id="mapping-view">
         <el-row :gutter="10">
-              <el-col :xs="24" :sm="24" :md="8" :lg="5">
+              <el-col :xs="24" :sm="24" :md="5" :lg="5">
                     <el-upload class="upload-demo" drag :action="action"
                       :on-change="handleChange"
                       :file-list="fileList"
@@ -11,13 +11,13 @@
                       >
                         <i class="el-icon-upload"></i>
                         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                        <div class="el-upload__tip" slot="tip">更新ElasticSerach Index Template: 要求只能上传application/json文件、不超过2M、且文件名是对应的Index Template名称</div>
+                        <div class="el-upload__tip"style="background-color:#ccc;" slot="tip">更新ElasticSerach Index Template: 要求只能上传application/json文件、不超过2M、且文件名是对应的Index Template名称</div>
                      </el-upload>
               </el-col>
-              <el-col :xs="24" :sm="24" :md="16" :lg="19">
-                    <div style="background-color:#ffffff;">
-                      <div class="chart" id="temp-chartx" style="width: 100%; height:275px;"></div>
-                    </div>
+              <el-col :xs="24" :sm="24" :md="19" :lg="19" style="background-color:#ffffff;">
+                    <!--<div style="background-color:#ffffff; margin:0 auto; width: 90%" >-->
+                      <div class="chart" id="temp-chartx" style="width: 100%; height:275px; "></div>
+                    <!--</div>-->
                  </el-col>
         </el-row>
         <hr>
