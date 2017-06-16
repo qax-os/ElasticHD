@@ -83,9 +83,9 @@
                                     </el-form>
                                 </template>
                             </el-table-column>
-                            <el-table-column prop="index" label="Index" width="220"></el-table-column>
-                            <el-table-column prop="docs" label="Docs" sortable width="100"></el-table-column>
-                            <el-table-column prop="size" label="Primary Size" sortable></el-table-column>
+                            <el-table-column prop="index" label="Index" ></el-table-column>
+                            <el-table-column prop="docs" label="Docs" sortable ></el-table-column>
+                            <el-table-column prop="size" label="Size" sortable></el-table-column>
                             <el-table-column prop="status" label="Status"></el-table-column>
                             <el-table-column label="操作">
                             <template scope="scope">
