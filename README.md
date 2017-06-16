@@ -119,7 +119,10 @@ GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/ela
 ![image](https://raw.githubusercontent.com/farmerx/ElasticHD/master/WX20170605-105148.png)
 
 ## Todo
-...
+* More plugins support
+* The indices list supports search, better sorting, detailed viewing, and more
+* Program logo design
+* Monitoring information collection
 
 
 ## Licenses
