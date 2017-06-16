@@ -238,7 +238,7 @@ export default {
     padding: 10px 20px !important;
     border-bottom: 1px solid #ccc !important;
     box-sizing: border-box;
-    background-color: #F7F6F6;
+    background-color: #f1f4f7;
 }
 #spinner {
   text-align:center;

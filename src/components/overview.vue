@@ -45,8 +45,8 @@
                     </div>
                  </el-col>
                  <el-col :xs="24" :sm="24" :md="12" :lg="12">
-                    <el-table :data="indexList.slice(0, 6)" border style="width: 100%" height="450">
-                        <el-table-column label="Index list" >
+                    <el-table :data="indexList.slice(0, 9)" border style="width: 100%" height="450">
+                        <el-table-column label="Indices list" >
                             <el-table-column type="expand">
                                 <template scope="props">
                                     <el-form label-position="left" inline class="demo-table-expand" >

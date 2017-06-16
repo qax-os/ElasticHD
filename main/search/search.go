@@ -379,6 +379,17 @@ func (se *Search) uploadTemplate(w http.ResponseWriter, r *http.Request) {
 
 type indicesSort []Indices
 
-func (s indicesSort) Len() int           { return len(s) }
-func (s indicesSort) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
-func (s indicesSort) Less(i, j int) bool { return s[i].Index > s[j].Index }
+func (s indicesSort) Len() int      { return len(s) }
+func (s indicesSort) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
+func (s indicesSort) Less(i, j int) bool {
+	ix := strings.Split(s[i].Index, `-`)
+	jx := strings.Split(s[j].Index, `-`)
+
+	if len(ix) <= 1 {
+		return false
+	}
+	if len(jx) <= 1 {
+		return true
+	}
+	return ix[len(ix)-1] > jx[len(jx)-1]
+}
