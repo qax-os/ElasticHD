@@ -7,10 +7,11 @@ ElasticHD
 [![Release](https://img.shields.io/github/release/elasticHD/elasticHD.svg?label=Release)](https://github.com/farmerx/elasticHD/releases)
 [![GitHub issues](https://img.shields.io/github/issues/farmerx/ElasticHD.svg)](https://github.com/farmerx/ElasticHD/issues)
 > ElasticHD 是一款 ElasticSearch的可视化应用。不依赖ES的插件安装，更便捷；导航栏直接填写对应的ES IP和端口就可以操作Es了。目前支持如下功能：
- * ES 实时搜索
- * ES DashBoard 数据可视化
+ * ES Real time data search
+ * ES Dashboard data visualization
  * ES Index Template (在线修改、查看、上传）
- * SQL Converts to DSL
+ * ES Indices Index deletion and search
+ * SQL Converts to Elasticsearch DSL
  * ES 基本查询文档
  
 
