@@ -7,12 +7,13 @@ ElasticHD
 [![Release](https://img.shields.io/github/release/elasticHD/elasticHD.svg?label=Release)](https://github.com/farmerx/elasticHD/releases)
 [![GitHub issues](https://img.shields.io/github/issues/farmerx/ElasticHD.svg)](https://github.com/farmerx/ElasticHD/issues)
 > ElasticHD is a ElasticSearch visual management tool. It does not require any software. It works in your web browser, allowing you to manage and monitor your ElasticSearch clusters from anywhere at any time. Built on responsive CSS design, ElasticHD adjusts itself to any screen size on any device.The following functions are supported：
- * ES Real time data search
+ * ES Real time data search and query
  * ES Dashboard data visualization
- * ES Index Template (在线修改、查看、上传）
- * ES Indices Index deletion and search
+ * ES Indices Management
+ * Managing Type Mappings (在线修改、查看、上传）
  * SQL Converts to Elasticsearch DSL
  * ES 基本查询文档
+ * Device Friendly
  
 
 ## Installation
