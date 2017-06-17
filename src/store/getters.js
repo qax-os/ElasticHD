@@ -26,7 +26,9 @@ const getters = {
   sqlBody: state => state.toolsx.sqlBody,
   currentError: state => state.toolsx.currentError,
   DeleteIndexError: state => state.headerx.DeleteIndexError,
-  DeleteIndexSuccess: state => state.headerx.DeleteIndexSuccess
+  DeleteIndexSuccess: state => state.headerx.DeleteIndexSuccess,
+  DeleteMappingError: state => state.mappingx.DeleteMappingError,
+  DeleteMappingSuccess: state => state.mappingx.DeleteMappingSuccess
 }
 export default getters
 

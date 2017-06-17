@@ -5,7 +5,7 @@
   <el-input placeholder="请输入要查询的索引" icon="search" v-model="inputIndexName" :on-icon-click="handleIconClick">
   </el-input>
         <el-table :data="list.slice(0, showLen)" border style="width: 100%">
-            <el-table-column prop="index" label="Index" width="220" sortable></el-table-column>
+            <el-table-column prop="index" label="Index" width="200" sortable></el-table-column>
             <el-table-column prop="docs" label="文档个数" sortable></el-table-column>
             <el-table-column prop="size" label="Store Size" sortable></el-table-column>
             <el-table-column prop="prisize" label="主分片大小"></el-table-column>

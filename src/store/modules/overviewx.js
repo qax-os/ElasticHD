@@ -52,6 +52,16 @@ const overviewx = {
     documents: 0,
     size: 0,
     IndexTemplateList: [
+      {
+        'name': 'skylaraudit',
+        'type': '【_default_】【skylaraudit-audit_device】【skylaraudit-audit_account】【skylaraudit-audit_software】【skylaraudit-audit_print】【skylaraudit-audit_power】【skylaraudit-audit_safe_udiskx】【skylaraudit-audit_network】【skylaraudit-audit_operation】【skylaraudit-audit_mail】',
+        'visible': false
+      },
+      {
+        'name': 'skylartrackfile',
+        'type': '【skylartrackfile-tools_download】【skylartrackfile-client_imfile】【skylartrackfile-mail】【skylartrackfile-client_udisk】【skylartrackfile-operation】【skylartrackfile-browser_file】【_default_】【skylartrackfile-print】',
+        'visible': false
+      }
     ]
   },
   mutations: {

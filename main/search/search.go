@@ -248,8 +248,9 @@ func (se *Search) template(w http.ResponseWriter, r *http.Request) {
 			tmp = append(tmp, `【`+name+`】`)
 		}
 		tempreflect = append(tempreflect, map[string]interface{}{
-			`name`: key,
-			`type`: strings.Join(tmp, ``),
+			`name`:    key,
+			`type`:    strings.Join(tmp, ``),
+			`visible`: false,
 		})
 	}
 	var result = map[string]interface{}{
@@ -371,12 +372,10 @@ func (se *Search) uploadTemplate(w http.ResponseWriter, r *http.Request) {
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
 	url := fmt.Sprintf(`/_template/%s`, filename)
-	result, err := c.DoCommand(`PUT`, url, nil, data)
-	if err != nil {
+	if _, err := c.DoCommand(`PUT`, url, nil, data); err != nil {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	fmt.Println(err, 222, result)
 }
 
 type indicesSort []Indices
