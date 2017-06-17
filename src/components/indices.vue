@@ -5,13 +5,13 @@
   <el-input placeholder="请输入要查询的索引" icon="search" v-model="inputIndexName" :on-icon-click="handleIconClick">
   </el-input>
         <el-table :data="list.slice(0, showLen)" border style="width: 100%">
-            <el-table-column prop="index" label="Index" width="200" sortable></el-table-column>
-            <el-table-column prop="docs" label="文档个数" sortable></el-table-column>
-            <el-table-column prop="size" label="Store Size" sortable></el-table-column>
+            <el-table-column prop="index" label="Index"  sortable></el-table-column>
+            <el-table-column prop="docs" label="Docs" sortable></el-table-column>
+            <el-table-column prop="size" label="Size" sortable></el-table-column>
             <el-table-column prop="prisize" label="主分片大小"></el-table-column>
-            <el-table-column prop="health" label="健康状态"></el-table-column>
+            <el-table-column prop="health" label="Status"></el-table-column>
             <el-table-column prop="uuid" label="UUID"></el-table-column>
-            <el-table-column prop="delete" label="删除文档个数"></el-table-column>
+            <el-table-column prop="delete" label="Del Docs"></el-table-column>
             <el-table-column prop="status" label="Status"></el-table-column>
             <el-table-column label="操作">
               <template scope="scope">
