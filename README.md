@@ -6,7 +6,7 @@ ElasticHD
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/farmerx/elasticHD/blob/master/LICENSE)
 [![Release](https://img.shields.io/github/release/elasticHD/elasticHD.svg?label=Release)](https://github.com/farmerx/elasticHD/releases)
 [![GitHub issues](https://img.shields.io/github/issues/farmerx/ElasticHD.svg)](https://github.com/farmerx/ElasticHD/issues)
-> ElasticHD 是一款 ElasticSearch的可视化应用。不依赖ES的插件安装，更便捷；导航栏直接填写对应的ES IP和端口就可以操作Es了。目前支持如下功能：
+> ElasticHD is a ElasticSearch visual management tool. It does not require any software. It works in your web browser, allowing you to manage and monitor your ElasticSearch clusters from anywhere at any time. Built on responsive CSS design, ElasticHD adjusts itself to any screen size on any device.The following functions are supported：
  * ES Real time data search
  * ES Dashboard data visualization
  * ES Index Template (在线修改、查看、上传）
@@ -30,7 +30,8 @@ ElasticHD
  ```
  直接下载对应windows版本,解压，双击运行。当然想指定端口的话同linux
  ```
-
+## No Software to Install
+ElasticHD does not require any software. It works in your web browser, allowing you to manage and monitor your ElasticSearch clusters from anywhere at any time. Built on responsive CSS design, ElasticHD adjusts itself to any screen size on any device.
 ## Es version support
 > 测试过elasticsearch 1.5版本到5.2.1的版本都能正常使用。 关于 sql 转化成 dsl　马上会出elasticHD 1.1版本修复一些兼容性错误。
 
