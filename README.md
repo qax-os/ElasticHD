@@ -101,7 +101,7 @@ Beyond SQL
 ## 源码编译
 ```
 # 需要go环境
-go get https://github.com/farmerx/ElasticHD
+git Clone https://github.com/farmerx/ElasticHD
 # 进入到应用目录下
 cd ElasticHD
 npm install
@@ -125,7 +125,6 @@ GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/ela
 * The indices list supports search, better sorting, detailed viewing, and more
 * Program logo design
 * Monitoring information collection
-
 
 ## Licenses
 
