@@ -33,10 +33,8 @@ ElasticHD
 ## No Software to Install
 ElasticHD does not require any software. It works in your web browser, allowing you to manage and monitor your ElasticSearch clusters from anywhere at any time. Built on responsive CSS design, ElasticHD adjusts itself to any screen size on any device.
 ## Es version support
-> 测试过elasticsearch 1.5版本到5.2.1的版本都能正常使用。 关于 sql 转化成 dsl　马上会出elasticHD 1.1版本修复一些兼容性错误。
-
+> Compatible with all ES versions
 ## Contributing
-
 Contributions are welcome! Open a pull request to fix a bug, or open an issue to discuss a new feature or change.
 
 ## ElasticHD SQL Converts to ElasticSearch DSL Usage
