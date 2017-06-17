@@ -115,10 +115,14 @@ statik -src=../dist
 GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/elasticHD/main
 ```
 ## ElasticHD应用页面
-![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120044177.png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120114338.png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/snp20170518120147401.png)
-![image](https://raw.githubusercontent.com/farmerx/ElasticHD/master/WX20170605-105148.png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard.png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(1).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(2).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(3).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(4).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(5).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(6).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(7).png)
 
 ## Todo
 * More plugins support
