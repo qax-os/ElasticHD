@@ -101,11 +101,11 @@ const headerx = {
                 break
               case 'yellow':
                 commit('SET_STATUS', 'Yellow')
-                commit('SET_STATUS_STYLE', { color: '#001422', background: '#28C768', textAlign: 'center', borderRadius: '4px', fontWeight: '800' })
+                commit('SET_STATUS_STYLE', { color: '#001422', background: '#EEEE11', textAlign: 'center', borderRadius: '4px', fontWeight: '800' })
                 break
               case 'red':
                 commit('SET_STATUS', 'Red')
-                commit('SET_STATUS_STYLE', { color: '#001422', background: '#28C768', textAlign: 'center', borderRadius: '4px', fontWeight: '800' })
+                commit('SET_STATUS_STYLE', { color: '#001422', background: '#EE1111', textAlign: 'center', borderRadius: '4px', fontWeight: '800' })
                 break
             }
             commit('SET_HEALTH', response.body.data)

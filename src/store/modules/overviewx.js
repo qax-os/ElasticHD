@@ -52,16 +52,16 @@ const overviewx = {
     documents: 0,
     size: 0,
     IndexTemplateList: [
-      {
-        'name': 'skylaraudit',
-        'type': '【_default_】【skylaraudit-audit_device】【skylaraudit-audit_account】【skylaraudit-audit_software】【skylaraudit-audit_print】【skylaraudit-audit_power】【skylaraudit-audit_safe_udiskx】【skylaraudit-audit_network】【skylaraudit-audit_operation】【skylaraudit-audit_mail】',
-        'visible': false
-      },
-      {
-        'name': 'skylartrackfile',
-        'type': '【skylartrackfile-tools_download】【skylartrackfile-client_imfile】【skylartrackfile-mail】【skylartrackfile-client_udisk】【skylartrackfile-operation】【skylartrackfile-browser_file】【_default_】【skylartrackfile-print】',
-        'visible': false
-      }
+      // {
+      //   'name': 'skylaraudit',
+      //   'type': '【_default_】【skylaraudit-audit_device】【skylaraudit-audit_account】【skylaraudit-audit_software】【skylaraudit-audit_print】【skylaraudit-audit_power】【skylaraudit-audit_safe_udiskx】【skylaraudit-audit_network】【skylaraudit-audit_operation】【skylaraudit-audit_mail】',
+      //   'visible': false
+      // },
+      // {
+      //   'name': 'skylartrackfile',
+      //   'type': '【skylartrackfile-tools_download】【skylartrackfile-client_imfile】【skylartrackfile-mail】【skylartrackfile-client_udisk】【skylartrackfile-operation】【skylartrackfile-browser_file】【_default_】【skylartrackfile-print】',
+      //   'visible': false
+      // }
     ]
   },
   mutations: {
@@ -95,7 +95,7 @@ const overviewx = {
     SET_PANEL_WIDGET: (state) => {
       state.panelWidget = [
         {fontAwesome: 'fa fa-line-chart fa-3x', value: state.tShard, name: 'Total Shards', colors: 'panel-pink'},
-        {fontAwesome: 'fa fa-check-circle fa-3x', value: state.tShard, name: 'Successful Shards', colors: 'panel-blue'},
+        {fontAwesome: 'fa fa-check-circle fa-3x', value: state.sShard, name: 'Successful Shards', colors: 'panel-blue'},
         {fontAwesome: 'fa fa-database fa-3x', value: state.indices, name: 'indices', colors: 'panel-yellow'},
         {fontAwesome: 'fa fa-list-ul fa-3x', value: state.templates, name: 'Templates', colors: 'panel-teal'},
         {fontAwesome: 'fa fa-file-text fa-3x', value: state.documents, name: 'Documents', colors: 'panel-orange'},
@@ -129,13 +129,14 @@ const overviewx = {
     SetClusterInfo ({commit}, data) {
       data.timed_out = data.timed_out ? 'true' : 'false'
       commit('SET_CLUSTER_INFO', data)
+      commit('SET_PANEL_TSHARD', data.active_primary_shards + data.unassigned_shards)
+      commit('SET_PANEL_SSHARD', data.active_primary_shards)
     },
     SetStats ({commit}, body) {
       Vue.http.post(body.url, {'host': body.host})
       .then(
         response => {
           if (response.body.result === 0) {
-            commit('SET_PANEL_TSHARD', response.body.data.shards)
             commit('SET_PANEL_INDICES', response.body.data.indices)
             commit('SET_PANEL_DOCUMENTS', response.body.data.docs)
             commit('SET_PANEL_SIZE', response.body.data.size)
