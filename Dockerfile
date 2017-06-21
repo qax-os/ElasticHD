@@ -6,6 +6,10 @@ RUN apk add --no-cache curl && \
     unzip elasticHD_linux_amd64.zip -d /usr/local/bin && \
     rm -f elasticHD_linux_amd64.zip
 
+RUN adduser -D elastic
+
+USER elastic
+
 EXPOSE 9800
 
 ENTRYPOINT ["ElasticHD"]
