@@ -15,6 +15,8 @@ ElasticHD
  * ES 基本查询文档
  * Device Friendly
  
+## 支持权限认证
+> 支持有权限认证的ElasticSearch服务器，url格式：http://user:password@host:port
 
 ## Installation
 
