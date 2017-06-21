@@ -194,6 +194,8 @@ func (se *Search) handleTemplate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
+  c.Username = u.User.Username()
+  c.Password, _ = u.User.Password()
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
@@ -314,6 +316,8 @@ func (se *Search) search(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
+  c.Username = u.User.Username()
+  c.Password, _ = u.User.Password()
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
@@ -368,6 +372,8 @@ func (se *Search) uploadTemplate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
+  c.Username = u.User.Username()
+  c.Password, _ = u.User.Password()
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
@@ -408,6 +414,8 @@ func (se *Search) indexDelete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
+  c.Username = u.User.Username()
+  c.Password, _ = u.User.Password()
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
