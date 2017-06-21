@@ -116,6 +116,30 @@ statik -src=../dist
 # go build
 GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/elasticHD/main
 ```
+## Quick Start:
+```
+docker run -p 9200:9200 -d --name elasticsearch elasticsearch
+docker run -p 9800:9800 -d --link elasticsearch:demo containerize/elastichd
+```
+
+
+Open http://localhost:9800 in Browser
+Connect with http://demo:9200
+
+---
+
+Image link: https://hub.docker.com/r/containerize/elastichd/
+
+
+---
+
+Screen Shot:
+![image](https://user-images.githubusercontent.com/2404785/27365726-2dcda1b4-5674-11e7-948c-f0d3da6418c3.png)
+
+编译Docker Images
+docker build -t elastichd:latest .
+
+
 ## ElasticHD应用页面
 ![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard.png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(1).png)
