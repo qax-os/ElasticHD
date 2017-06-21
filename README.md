@@ -116,7 +116,7 @@ statik -src=../dist
 # go build
 GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/elasticHD/main
 ```
-## Quick Start:
+## Docker Quick Start:
 ```
 docker run -p 9200:9200 -d --name elasticsearch elasticsearch
 docker run -p 9800:9800 -d --link elasticsearch:demo containerize/elastichd
