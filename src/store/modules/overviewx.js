@@ -154,7 +154,9 @@ const overviewx = {
               fstotal: response.body.data.fstotal,
               fsfree: response.body.data.fsfree,
               fielddata_mem_used: response.body.data.fielddata_mem_used,
-              query_cache_memory_size: response.body.data.query_cache.memory_size_in_bytes
+              query_cache_memory_size: response.body.data.query_cache.memory_size_in_bytes,
+              cpuused: response.body.data.cpuused,
+              cpufree: response.body.data.cpufree
             }
             commit('SET_CHARTS', chart)
           }

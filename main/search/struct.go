@@ -58,6 +58,8 @@ type Stats struct {
 	FieldDataMemUsed int64       `json:"fielddata_mem_used"`
 	QueryCache       interface{} `json:"query_cache"`
 	Timestamp        int64       `json:"timestamp"`
+	CPUUsed          int         `json:"cpuused"`
+	CPUFree          int         `json:"cpufree"`
 }
 
 // System ...

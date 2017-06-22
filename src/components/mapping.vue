@@ -2,7 +2,7 @@
   <section id="mapping-view">
     <el-row :gutter="0">
       <el-col :xs="24" :sm="24" :md="8" :lg="8">
-        <el-card :body-style="{ padding: '0px' }">
+        <el-card :body-style="{ padding: '0px', height: '300px' }">
           <img src="../assets/hero.svg" class="image">
           <div style="background-color:#D3DCE6;">
             <div style="text-align:center;">Indices Templates</div>
@@ -23,12 +23,12 @@
       </el-col>
       <el-col :xs="24" :sm="12" :md="8" :lg="8">
         <div>
-          <el-upload class="upload-demo" drag :action="action" :on-change="handleChange" :file-list="fileList" :before-upload="beforeFileUpload" :on-success="fileUploadSuccess" :on-error="fileUploadError" style="width:369px;">
+          <el-upload class="upload-demo" drag :action="action" :on-change="handleChange" :file-list="fileList" :before-upload="beforeFileUpload" :on-success="fileUploadSuccess" :on-error="fileUploadError" style="width:400px;">
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或
               <em>点击上传</em>
             </div>
-            <div class="el-upload__tip" style="text-align:center; background-color:#D3DCE6;margin-top:0px; width:369px" slot="tip">更新ElasticSerach Index Template: 要求只能上传application/json文件、不超过2M、且文件名是对应的Index Template名称</div>
+            <div class="el-upload__tip" style="text-align:center; background-color:#D3DCE6;margin-top:0px; width:360px" slot="tip">更新ElasticSerach Index Template: 要求只能上传application/json文件、不超过2M、且文件名是对应的Index Template名称</div>
           </el-upload>
         </div>
       </el-col>
@@ -147,8 +147,8 @@ export default {
     fileUploadError (file, error) {
       this.$message.error(error.name + ' 模板部署失败，请打开开发者模式查看错误信息提示')
     },
-    fileUploadSuccess (file) {
-      console.log(file)
+    fileUploadSuccess (res, file) {
+      // console.log(res, file, 2222)
       this.$message.success(file.name + ' 模板部署成功')
     },
     handleChange (file, fileList) {

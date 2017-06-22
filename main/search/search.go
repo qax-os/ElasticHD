@@ -153,6 +153,8 @@ func (se *Search) clusterStats(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var elasticStats = Stats{}
+	elasticStats.CPUUsed = stats.Nodes.Process.CPU.Percent
+	elasticStats.CPUFree = 100 - stats.Nodes.Process.CPU.Percent
 	elasticStats.ClusterName = stats.ClusterName
 	elasticStats.Docs = stats.Indices.Docs.Count
 	elasticStats.FieldDataMemUsed = stats.Indices.Fielddata.MemorySizeInBytes
@@ -166,7 +168,7 @@ func (se *Search) clusterStats(w http.ResponseWriter, r *http.Request) {
 	for _, item := range stats.Nodes.Jvm.Versions {
 		elasticStats.JvmVersions += item.Version + ","
 	}
-	elasticStats.MemFree = stats.Nodes.Os.Mem.FreeInBytes
+	elasticStats.MemFree = stats.Nodes.Os.Mem.TotalInBytes - stats.Nodes.Os.Mem.UsedInBytes
 	elasticStats.MemToatl = stats.Nodes.Os.Mem.TotalInBytes
 	elasticStats.MemUsed = stats.Nodes.Os.Mem.UsedInBytes
 	elasticStats.Plugins = stats.Nodes.Plugins
