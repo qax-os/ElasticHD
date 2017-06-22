@@ -155,8 +155,11 @@ export default {
       this.fileList = fileList.slice(-3)
     },
     beforeFileUpload (file) {
-      const isLt2M = file.size / 1024 / 1024 < 2
-      const isJson = file.type === 'application/json'
+      var isLt2M = file.size / 1024 / 1024 < 2
+      var isJson = file.type === 'application/json'
+      if (file.type === '') {
+        isJson = true
+      }
       console.log(file)
       if (!isJson) {
         this.$message.error('上传的文件类型必须是application/json!')

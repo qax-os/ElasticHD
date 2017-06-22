@@ -9,7 +9,8 @@ const sidebarx = {
       {fontAwesome: 'fa fa-list', value: 'indices'},
       {fontAwesome: 'fa fa-table', value: 'Mapping'},
       {fontAwesome: 'fa fa-gears', value: 'Tools'},
-      {fontAwesome: 'fa fa-comments-o', value: 'Help'}
+      {fontAwesome: 'fa fa-comments-o', value: 'Help'},
+      {fontAwesome: 'fa fa-comments-o', value: 'Monitor'}
     ]
   },
   mutations: {
