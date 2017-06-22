@@ -38,7 +38,9 @@ const overviewx = {
       fstotal: 0,
       fsfree: 0,
       fielddata_mem_used: 0,
-      query_cache_memory_size: 0
+      query_cache_memory_size: 0,
+      cpufree: 100,
+      cpuused: 0
     },
     templateInfo: {
       count: 0,

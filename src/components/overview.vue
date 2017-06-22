@@ -237,6 +237,12 @@ export default {
         tooltip: {
           trigger: 'item',
           formatter: function (params) {
+            if (params.name === 'CPU') {
+              return 'CPU利用率: ' + charts.cpuused + '%'
+            }
+            if (params.name === 'CPUFree') {
+              return 'CPU剩余利用率: ' + (100 - charts.cpuused) + '%'
+            }
             if (params.name === 'Jvm') {
               return 'JVM已用内存: ' + b2b(params.value)
             }
@@ -268,7 +274,7 @@ export default {
           x: 'center',
           y: 'bottom',
           data: [
-            'Jvm', 'Mem', 'Fs', 'FieldData', 'QueryCache'
+            'Jvm', 'Mem', 'Fs', 'FieldData', 'QueryCache', 'CPU'
           ]
         },
         title: {
@@ -279,7 +285,7 @@ export default {
         series: [
           {
             type: 'pie',
-            center: ['13%', '50%'],
+            center: ['7%', '50%'],
             radius: [40, 55],
             x: '0%',
             itemStyle: labelFromatter,
@@ -290,7 +296,7 @@ export default {
           },
           {
             type: 'pie',
-            center: ['31%', '50%'],
+            center: ['23%', '50%'],
             radius: [40, 55],
             x: '0%',
             itemStyle: labelFromatter,
@@ -301,7 +307,7 @@ export default {
           },
           {
             type: 'pie',
-            center: ['49%', '50%'],
+            center: ['39%', '50%'],
             radius: [40, 55],
             x: '0%',
             itemStyle: labelFromatter,
@@ -312,7 +318,7 @@ export default {
           },
           {
             type: 'pie',
-            center: ['67%', '50%'],
+            center: ['55%', '50%'],
             radius: [40, 55],
             x: '0%',
             itemStyle: labelFromatter,
@@ -323,13 +329,24 @@ export default {
           },
           {
             type: 'pie',
-            center: ['85%', '50%'],
+            center: ['71%', '50%'],
             radius: [40, 55],
             x: '0%',
             itemStyle: labelFromatter,
             data: [
               {name: 'QueryCache-mem', value: charts.memfree, itemStyle: labelBottom},
               {name: 'QueryCache', value: charts.query_cache_memory_size, itemStyle: labelTop}
+            ]
+          },
+          {
+            type: 'pie',
+            center: ['87%', '50%'],
+            radius: [40, 55],
+            x: '0%',
+            itemStyle: labelFromatter,
+            data: [
+              {name: 'CPUFree', value: charts.cpufree, itemStyle: labelBottom},
+              {name: 'CPU', value: charts.cpuused, itemStyle: labelTop}
             ]
           }
         ]

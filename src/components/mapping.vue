@@ -145,10 +145,11 @@ export default {
       this.$store.dispatch('HandleIndexTemplate', tmp)
     },
     fileUploadError (file, error) {
-      this.$message.error(file.name + ' 模板部署失败，请打开开发者模式查看错误信息提示')
+      this.$message.error(error.name + ' 模板部署失败，请打开开发者模式查看错误信息提示')
     },
     fileUploadSuccess (file) {
-      this.$message.success(file.name + '模板部署成功')
+      console.log(file)
+      this.$message.success(file.name + ' 模板部署成功')
     },
     handleChange (file, fileList) {
       this.fileList = fileList.slice(-3)

@@ -194,8 +194,12 @@ func (se *Search) handleTemplate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
-  c.Username = u.User.Username()
-  c.Password, _ = u.User.Password()
+	if u.User != nil {
+		c.Username = u.User.Username()
+		if pwd, bool := u.User.Password(); bool {
+			c.Password = pwd
+		}
+	}
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
@@ -316,8 +320,12 @@ func (se *Search) search(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
-  c.Username = u.User.Username()
-  c.Password, _ = u.User.Password()
+	if u.User != nil {
+		c.Username = u.User.Username()
+		if pwd, bool := u.User.Password(); bool {
+			c.Password = pwd
+		}
+	}
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
@@ -360,20 +368,26 @@ func (se *Search) uploadTemplate(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
+
 	filename := strings.Split(handler.Filename, ".json")[0]
 	data, err := ioutil.ReadAll(file)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		return
 	}
+
 	u, err := url.Parse(r.FormValue(`serverhost`))
 	if err != nil {
 		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
 		return
 	}
 	c := elastigo.NewConn()
-  c.Username = u.User.Username()
-  c.Password, _ = u.User.Password()
+	if u.User != nil {
+		c.Username = u.User.Username()
+		if pwd, bool := u.User.Password(); bool {
+			c.Password = pwd
+		}
+	}
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
@@ -414,8 +428,12 @@ func (se *Search) indexDelete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := elastigo.NewConn()
-  c.Username = u.User.Username()
-  c.Password, _ = u.User.Password()
+	if u.User != nil {
+		c.Username = u.User.Username()
+		if pwd, bool := u.User.Password(); bool {
+			c.Password = pwd
+		}
+	}
 	c.Domain = strings.Split(u.Host, ":")[0]
 	c.Port = strings.Split(u.Host, ":")[1]
 	c.DecayDuration = 0
