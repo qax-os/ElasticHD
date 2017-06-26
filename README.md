@@ -103,7 +103,7 @@ Beyond SQL
 ## 源码编译
 ```
 # 需要go环境
-git Clone https://github.com/farmerx/ElasticHD
+git clone https://github.com/farmerx/ElasticHD
 # 进入到应用目录下
 cd ElasticHD
 npm install
