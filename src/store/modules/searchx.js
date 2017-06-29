@@ -11,12 +11,16 @@ const searchx = {
      {'value': 'POST', 'label': 'POST'},
      {'value': 'HEAD', 'label': 'HEAD'}
     ],
+    fields: [],
     result: '{}',
     showSpinner: false
   },
   mutations: {
     SET_RESULT: (state, data) => {
       state.result = data
+    },
+    SET_FIELDS: (state, data) => {
+      state.fields = data
     },
     SET_SHOW_SPINNER: (state, flag) => {
       state.showSpinner = flag
@@ -33,6 +37,19 @@ const searchx = {
         error => {
           commit('SET_SHOW_SPINNER', false)
           commit('SET_RESULT', error)
+          console.log(error)
+        }
+      )
+    },
+    CURLSerachFields ({commit}, body) {
+      Vue.http.post(body.url, body)
+      .then(
+        response => {
+          if (response.body.result === 0) {
+            commit('SET_FIELDS', response.body.data)
+          }
+        },
+        error => {
           console.log(error)
         }
       )

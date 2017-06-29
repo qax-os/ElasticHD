@@ -5,14 +5,14 @@
   <el-input placeholder="请输入要查询的索引" icon="search" v-model="inputIndexName" :on-icon-click="handleIconClick">
   </el-input>
         <el-table :data="list.slice(0, showLen)" border style="width: 100%">
-            <el-table-column prop="index" label="Index"  sortable></el-table-column>
-            <el-table-column prop="docs" label="Docs" sortable></el-table-column>
-            <el-table-column prop="size" label="Size" sortable></el-table-column>
-            <el-table-column prop="prisize" label="主分片大小"></el-table-column>
-            <el-table-column prop="health" label="Status"></el-table-column>
-            <el-table-column prop="uuid" label="UUID"></el-table-column>
-            <el-table-column prop="delete" label="Del Docs"></el-table-column>
-            <el-table-column prop="status" label="Status"></el-table-column>
+            <el-table-column prop="index" label="Index"  sortable show-overflow-tooltip></el-table-column>
+            <el-table-column prop="docs" label="Docs" sortable show-overflow-tooltip></el-table-column>
+            <el-table-column prop="size" label="Size" sortable show-overflow-tooltip></el-table-column>
+            <el-table-column prop="prisize" label="主分片大小" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="health" label="Status" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="uuid" label="UUID" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="delete" label="Del Docs" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="status" label="Status" show-overflow-tooltip></el-table-column>
             <el-table-column label="操作">
               <template scope="scope">
                 <el-popover ref="popover{{$index}}" placement="top" width="160" v-model="scope.row.visible" trigger="click">
@@ -96,6 +96,12 @@
 </script>
 
 <style>
-
-
+.el-table .cell {
+    white-space: normal;
+    /*word-break: break-all;*/
+    line-height: 24px;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    text-overflow:ellipsis !important;
+}
 </style>

@@ -44,6 +44,7 @@ func (se *Search) RegHandler() {
 	se.mux.HandleFunc("/_template/handle", se.handleTemplate)
 	se.mux.HandleFunc("/_sql2dsl", se.sqlConvert)
 	se.mux.HandleFunc("/_indices/delete", se.indexDelete)
+	se.mux.HandleFunc("/_indices/mapping", se.getMapping)
 }
 
 func (se *Search) sqlConvert(w http.ResponseWriter, r *http.Request) {
@@ -338,7 +339,7 @@ func (se *Search) search(w http.ResponseWriter, r *http.Request) {
 	}
 	result, err := c.DoCommand(param.Method, url, nil, param.Body)
 	if err != nil {
-		w.Write(jsonEncode(0, map[string]interface{}{"info": err.Error()}))
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
 		return
 	}
 	var dBody interface{}
@@ -400,6 +401,61 @@ func (se *Search) uploadTemplate(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// get mapping info
+func (se *Search) getMapping(w http.ResponseWriter, r *http.Request) {
+	param, err := getParams(r)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	u, err := url.Parse(param.Serverhost)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	c := elastigo.NewConn()
+	if u.User != nil {
+		c.Username = u.User.Username()
+		if pwd, bool := u.User.Password(); bool {
+			c.Password = pwd
+		}
+	}
+	c.Domain = strings.Split(u.Host, ":")[0]
+	c.Port = strings.Split(u.Host, ":")[1]
+	c.DecayDuration = 0
+
+	url := fmt.Sprintf(`/%s/_mapping`, strings.TrimSpace(param.Indices))
+	result, err := c.DoCommand(`GET`, url, nil, nil)
+	if err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	var mapping map[string]struct {
+		Mappings map[string]struct {
+			Properties map[string]interface{} `json:"properties"`
+		} `json:"mappings"`
+	}
+	if err := json.Unmarshal(result, &mapping); err != nil {
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
+		return
+	}
+	var fields = make(map[string]string, 0)
+	for _, item := range mapping {
+		for _, types := range item.Mappings {
+			for field := range types.Properties {
+				if _, ok := fields[field]; !ok {
+					fields[field] = field
+				}
+			}
+		}
+	}
+	var mappingFields = make([]string, 0)
+	for key := range fields {
+		mappingFields = append(mappingFields, key)
+	}
+	w.Write(jsonEncode(0, mappingFields))
+}
+
 type indicesSort []Indices
 
 func (s indicesSort) Len() int      { return len(s) }
@@ -442,7 +498,7 @@ func (se *Search) indexDelete(w http.ResponseWriter, r *http.Request) {
 	url := fmt.Sprintf(`/%s`, strings.TrimSpace(param.Index))
 	result, err := c.DoCommand(`DELETE`, url, nil, nil)
 	if err != nil {
-		w.Write(jsonEncode(0, map[string]interface{}{"info": err.Error()}))
+		w.Write(jsonEncode(1, map[string]interface{}{"info": err.Error()}))
 		return
 	}
 	var dBody interface{}

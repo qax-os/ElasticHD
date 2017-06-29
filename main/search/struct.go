@@ -233,3 +233,10 @@ type ClusterStats struct {
 		} `json:"plugins"`
 	} `json:"nodes"`
 }
+
+// // Mapping 节本返回结构
+// type Mapping struct {
+// 	Mappings map[string]struct {
+// 		Properties map[string]interface{} `json:"properties"`
+// 	}Mapping
+// }

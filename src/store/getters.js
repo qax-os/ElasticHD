@@ -18,6 +18,7 @@ const getters = {
   templateInfo: state => state.overviewx.templateInfo,
   options: state => state.searchx.options,
   result: state => state.searchx.result,
+  fields: state => state.searchx.fields,
   showSpinner: state => state.searchx.showSpinner,
   IndexTemplateList: state => state.overviewx.IndexTemplateList,
   toggleMapping: state => state.mappingx.toggleMapping,

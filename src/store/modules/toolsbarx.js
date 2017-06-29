@@ -31,6 +31,12 @@ const toolsbarx = {
         case 5:
           commit('SET_TOGGLE_TITLE', "<i class='fa fa-comments'></i> Syntactic Sugar【语法糖】")
           break
+        case 6:
+          commit('SET_TOGGLE_TITLE', "<i class='fa fa-comments'></i> Monitor Eye【ES服务监控】")
+          break
+        case 7:
+          commit('SET_TOGGLE_TITLE', "<i class='fa fa-comments'></i> Query UI【通用查询】")
+          break
       }
     }
   }

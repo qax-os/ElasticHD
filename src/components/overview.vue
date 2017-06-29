@@ -83,10 +83,10 @@
                                     </el-form>
                                 </template>
                             </el-table-column>
-                            <el-table-column prop="index" label="Index" ></el-table-column>
-                            <el-table-column prop="docs" label="Docs" sortable ></el-table-column>
-                            <el-table-column prop="size" label="Size" sortable></el-table-column>
-                            <el-table-column prop="status" label="Status"></el-table-column>
+                            <el-table-column prop="index" label="Index" show-overflow-tooltip></el-table-column>
+                            <el-table-column prop="docs" label="Docs" sortable show-overflow-tooltip></el-table-column>
+                            <el-table-column prop="size" label="Size" sortable show-overflow-tooltip></el-table-column>
+                            <el-table-column prop="status" label="Status" show-overflow-tooltip></el-table-column>
                             <el-table-column label="操作">
                             <template scope="scope">
                                 <el-popover ref="popover{{$index}}" placement="top" width="160" v-model="scope.row.visible" trigger="click">
@@ -415,7 +415,14 @@ export default {
 </script>
 
 <style>
-
+.el-table .cell {
+    white-space: normal;
+    /*word-break: break-all;*/
+    line-height: 24px;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    text-overflow:ellipsis !important;
+}
 .panel-pad {
     padding-right: 40px;
 }

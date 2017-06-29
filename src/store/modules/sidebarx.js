@@ -5,12 +5,13 @@ const sidebarx = {
     toggleShow: true,
     items: [
       {fontAwesome: 'fa fa-dashboard', value: 'Dashboard'},
-      {fontAwesome: 'fa fa-search', value: 'query'},
-      {fontAwesome: 'fa fa-list', value: 'indices'},
+      {fontAwesome: 'fa fa-search', value: 'Query'},
+      {fontAwesome: 'fa fa-list', value: 'Indices'},
       {fontAwesome: 'fa fa-table', value: 'Mapping'},
       {fontAwesome: 'fa fa-gears', value: 'Tools'},
       {fontAwesome: 'fa fa-comments-o', value: 'Help'},
-      {fontAwesome: 'fa fa-comments-o', value: 'Monitor'}
+      {fontAwesome: 'fa fa-eye', value: 'Monitor'},
+      {fontAwesome: 'fa fa-search-plus', value: 'QueryUI'}
     ]
   },
   mutations: {
