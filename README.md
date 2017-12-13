@@ -14,6 +14,19 @@ ElasticHD
  * SQL Converts to Elasticsearch DSL
  * Device Friendly
  
+ 
+
+## ElasticHD Application Pages
+
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard.png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(1).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(2).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(3).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(4).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(5).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(6).png)
+![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(7).png)
+ 
 ## Authentication
 > ElasticSearch server that supports privileged authentication, URL format：http://user:password@host:port
 
@@ -152,13 +165,4 @@ Connect with http://demo:9200
 
 This program is under the terms of the MIT License. See [LICENSE](https://github.com/farmerx/elasticHD/blob/master/LICENSE) for the full license text.
 
-## ElasticHD Application Pages
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard.png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(1).png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(2).png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(3).png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(4).png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(5).png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(6).png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(7).png)
 
