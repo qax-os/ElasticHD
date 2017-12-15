@@ -19,7 +19,6 @@ ElasticHD
 ## ElasticHD Application Pages
 
 ![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard.png)
-![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(1).png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(2).png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(3).png)
 ![image](https://github.com/farmerx/ElasticHD/blob/master/Elastic%20HD%20Dashboard%20(4).png)
