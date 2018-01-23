@@ -31,7 +31,7 @@ ElasticHD
 
 ## Installation
 
-[Precompiled binaries](https://github.com/farmerx/elasticHD/releases) for supported operating systems are available.
+[Precompiled binaries]( https://github.com/360EntSecGroup-Skylar/ElasticHD/releases/) for supported operating systems are available.
 
 ## Basic Usage
 
