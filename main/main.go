@@ -18,6 +18,7 @@ import (
 )
 
 var (
+  Version string
 	Stderr io.Writer = os.Stderr // Stderr is the io.Writer to which executed commands write standard error.
 	Stdout io.Writer = os.Stdout // Stdout is the io.Writer to which executed commands write standard output.
 )
@@ -51,6 +52,7 @@ func main() {
 			os.Exit(1)
 		}
 	}(config.ServerHost, mux)
+	fmt.Println("elasticHD V", Version, "is running")
 	openPage()
 	// 捕捉ctrl+C 退出信号
 	handleSignals()
