@@ -14,11 +14,11 @@ release:
 	make clean
 	# Build for mac
 	cd main && go build ${LDFLAGS} -o ../${BINARY}
-	tar czvf ../${BINARY}-mac64-${VERSION}.tar.gz ./${BINARY}
+	tar czvf ${BINARY}-mac64-${VERSION}.tar.gz ./${BINARY}
 	# Build for linux
 	cd main && go clean
 	cd main && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build ${LDFLAGS} -o ../${BINARY}
-	tar czvf ../${BINARY}-linux64-${VERSION}.tar.gz ./${BINARY}
+	tar czvf ${BINARY}-linux64-${VERSION}.tar.gz ./${BINARY}
 	# Build for win
 	cd main && go clean
 	cd main && CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o ../${BINARY}.exe ${LDFLAGS}
