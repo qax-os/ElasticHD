@@ -130,15 +130,12 @@ $ git clone https://github.com/360EntSecGroup-Skylar/ElasticHD
 $ cd ElasticHD
 
 # front-end web install dependencies and build
-$ npm install
-$ npm run build
+# then embed front-end web files into elasticHD go executable
+$ make webpack
 
-# back-end 
-$ cd ./main
-# Embed front-end web files into elasticHD go executable
-statik -src=../dist
 # go build
 make build
+
 # release
 $ make release
 ```
