@@ -4,7 +4,7 @@ ElasticHD
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/360EntSecGroup-Skylar/ElasticHD/main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Luxurioust/aurora)](https://goreportcard.com/report/github.com/360EntSecGroup-Skylar/elasticHD/main)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/360EntSecGroup-Skylar/elasticHD/blob/master/LICENSE)
-[![Release](https://img.shields.io/github/release/elasticHD/elasticHD.svg?label=Release)](https://github.com/360EntSecGroup-Skylar/elasticHD/releases/latest)
+[![Release](https://img.shields.io/github/release/360EntSecGroup-Skylar/ElasticHD.svg?label=Release)](https://github.com/360EntSecGroup-Skylar/ElasticHD/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/360EntSecGroup-Skylar/ElasticHD.svg)](https://github.com/360EntSecGroup-Skylar/ElasticHD/issues)
 > ElasticHD is a ElasticSearch visual management tool. It does not require any software. It works in your web browser, allowing you to manage and monitor your ElasticSearch clusters from anywhere at any time. Built on responsive CSS design, ElasticHD adjusts itself to any screen size on any device.The following functions are supported：
  * ES Real time data search and query
@@ -162,4 +162,4 @@ Connect with http://demo:9200
 
 ## Licenses
 
-This program is under the terms of the MIT License. See [LICENSE](https://github.com/360EntSecGroup-Skylar/elasticHD/blob/master/LICENSE) for the full license text.
+This program is under the terms of the MIT License. See [LICENSE](https://github.com/360EntSecGroup-Skylar/ElasticHD/blob/master/LICENSE) for the full license text.
