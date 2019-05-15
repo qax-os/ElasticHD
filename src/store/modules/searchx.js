@@ -28,7 +28,11 @@ const searchx = {
   },
   actions: {
     CURLSerachResult ({commit}, body) {
-      Vue.http.post(body.url, body)
+      Vue.http.post(body.url, body, {
+          headers: {
+              "Content-Type": "application/json"
+          }
+      })
       .then(
         response => {
           commit('SET_SHOW_SPINNER', false)
