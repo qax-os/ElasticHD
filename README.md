@@ -1,3 +1,9 @@
+近期准备对ElasticHD进行重构， 大家可以把自己的需求提issue~。  
+
+技术栈主要用： Vue + TypeScript + golang 
+
+欢迎大家提出自己的issue。
+
 ElasticHD
 -----------
 [![Build Status](https://travis-ci.org/360EntSecGroup-Skylar/ElasticHD.svg?branch=master)](https://travis-ci.org/360EntSecGroup-Skylar/ElasticHD)
