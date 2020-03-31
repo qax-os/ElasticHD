@@ -137,15 +137,19 @@ Beyond SQL
 
 ## Source code compilation
 
-```
-git clone https://github.com/360EntSecGroup-Skylar/ElasticHD
-cd ElasticHD
-npm install
-npm run build
-cd ./main
-statik -src=../dist
+```bash
+$ git clone https://github.com/360EntSecGroup-Skylar/ElasticHD
+$ cd ElasticHD
+
+# front-end web install dependencies and build
+# then embed front-end web files into elasticHD go executable
+$ make webpack
+
 # go build
-GO_ENABLED=0 GOOS=windows GOARCH=amd64  go build -o elasticHD.exe github.com/elasticHD/main
+make build
+
+# release
+$ make release
 ```
 
 ## Docker Quick Start:
