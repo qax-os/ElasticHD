@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <!--放置logo...-->
             <div class="navbar-header">
-                <a class="navbar-brand" id="elastic-logo-color" href="/"><i class="fa fa-dashboard fa-x"> </i> Elastic可视化管理工具</a>
+                <a class="navbar-brand" id="elastic-logo-color" href="/"><i class="fa fa-dashboard fa-x"> &nbsp;&nbsp;</i>Elastic管理</a>
             </div>
             <!--end-->
             <!-- Collect the nav links, forms, and other content for toggling -->
