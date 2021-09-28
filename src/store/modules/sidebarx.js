@@ -1,17 +1,15 @@
 const sidebarx = {
   state: {
-    msg: 'made by bibinbin',
+    msg: 'ebcloud',
     activeIndex: 0,
     toggleShow: true,
     items: [
-      {fontAwesome: 'fa fa-dashboard', value: 'Dashboard'},
-      {fontAwesome: 'fa fa-search', value: 'Query'},
-      {fontAwesome: 'fa fa-list', value: 'Indices'},
-      {fontAwesome: 'fa fa-table', value: 'Mapping'},
-      {fontAwesome: 'fa fa-gears', value: 'Tools'},
-      {fontAwesome: 'fa fa-comments-o', value: 'Help'},
-      {fontAwesome: 'fa fa-eye', value: 'Monitor'},
-      {fontAwesome: 'fa fa-search-plus', value: 'QueryUI'}
+      { fontAwesome: 'fa fa-dashboard', value: '仪表盘' },
+      { fontAwesome: 'fa fa-search', value: '查询' },
+      { fontAwesome: 'fa fa-list', value: '索引' },
+      { fontAwesome: 'fa fa-table', value: '映射' },
+      {fontAwesome: 'fa fa-gears', value: '工具'},
+      {fontAwesome: 'fa fa-comments-o', value: '帮助'}
     ]
   },
   mutations: {
