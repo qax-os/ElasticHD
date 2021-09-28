@@ -4,12 +4,12 @@ Vue.use(VueResource)
 const overviewx = {
   state: {
     panelWidget: [
-      {fontAwesome: 'fa fa-line-chart fa-3x', value: '0', name: 'Total Shards', colors: 'panel-pink'},
-      {fontAwesome: 'fa fa-check-circle fa-3x', value: '0', name: 'Successful Shards', colors: 'panel-blue'},
-      {fontAwesome: 'fa fa-database fa-3x', value: '0', name: 'indices', colors: 'panel-yellow'},
-      {fontAwesome: 'fa fa-list-ul fa-3x', value: '0', name: 'Templates', colors: 'panel-teal'},
-      {fontAwesome: 'fa fa-file-text fa-3x', value: '0', name: 'Documents', colors: 'panel-orange'},
-      {fontAwesome: 'fa fa-save fa-3x', value: '0', name: 'Total Size', colors: 'panel-red'}
+      {fontAwesome: 'fa fa-line-chart fa-3x', value: '0', name: '分片总数', colors: 'panel-pink'},
+      {fontAwesome: 'fa fa-check-circle fa-3x', value: '0', name: '成功分片', colors: 'panel-blue'},
+      {fontAwesome: 'fa fa-database fa-3x', value: '0', name: '索引', colors: 'panel-yellow'},
+      {fontAwesome: 'fa fa-list-ul fa-3x', value: '0', name: '模板', colors: 'panel-teal'},
+      {fontAwesome: 'fa fa-file-text fa-3x', value: '0', name: '文档', colors: 'panel-orange'},
+      {fontAwesome: 'fa fa-save fa-3x', value: '0', name: '总大小', colors: 'panel-red'}
     ],
     statsInfo: [
       {name: 'clusterName', value: '未知'},
@@ -96,12 +96,12 @@ const overviewx = {
     },
     SET_PANEL_WIDGET: (state) => {
       state.panelWidget = [
-        {fontAwesome: 'fa fa-line-chart fa-3x', value: state.tShard, name: 'Total Shards', colors: 'panel-pink'},
-        {fontAwesome: 'fa fa-check-circle fa-3x', value: state.sShard, name: 'Successful Shards', colors: 'panel-blue'},
-        {fontAwesome: 'fa fa-database fa-3x', value: state.indices, name: 'indices', colors: 'panel-yellow'},
-        {fontAwesome: 'fa fa-list-ul fa-3x', value: state.templates, name: 'Templates', colors: 'panel-teal'},
-        {fontAwesome: 'fa fa-file-text fa-3x', value: state.documents, name: 'Documents', colors: 'panel-orange'},
-        {fontAwesome: 'fa fa-save fa-3x', value: state.size, name: 'Total Size', colors: 'panel-red'}
+        {fontAwesome: 'fa fa-line-chart fa-3x', value: state.tShard, name: '分片总数', colors: 'panel-pink'},
+        {fontAwesome: 'fa fa-check-circle fa-3x', value: state.sShard, name: '成功分片', colors: 'panel-blue'},
+        {fontAwesome: 'fa fa-database fa-3x', value: state.indices, name: '索引', colors: 'panel-yellow'},
+        {fontAwesome: 'fa fa-list-ul fa-3x', value: state.templates, name: '模板', colors: 'panel-teal'},
+        {fontAwesome: 'fa fa-file-text fa-3x', value: state.documents, name: '文档', colors: 'panel-orange'},
+        {fontAwesome: 'fa fa-save fa-3x', value: state.size, name: '总大小', colors: 'panel-red'}
       ]
     },
     SET_STATS_INFO: (state, data) => {
