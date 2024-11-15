@@ -23,12 +23,6 @@
           <div v-else-if="activeIndex === 5">
             <Help></Help>
           </div>
-           <div v-else-if="activeIndex === 6">
-            <Monitor></Monitor>
-          </div>
-           <div v-else-if="activeIndex === 7">
-            <Queryui></Queryui>
-          </div>
         </div>
     </div>
   </div>
@@ -45,8 +39,6 @@ import Indices from './indices'
 import Mapping from './mapping'
 import Help from './help'
 import Tools from './tools'
-import Monitor from './monitor'
-import Queryui from './queryui'
 export default {
   name: 'home',
   components: {
@@ -58,9 +50,7 @@ export default {
     Indices,
     Mapping,
     Help,
-    Tools,
-    Monitor,
-    Queryui
+    Tools
   },
   computed: {
     ...mapGetters([

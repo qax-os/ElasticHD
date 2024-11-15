@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <!--放置logo...-->
             <div class="navbar-header">
-                <a class="navbar-brand" id="elastic-logo-color" href="/"><i class="fa fa-dashboard fa-x"> </i> ElasticHD</a>
+                <a class="navbar-brand" id="elastic-logo-color" href="/"><i class="fa fa-dashboard fa-x"> &nbsp;&nbsp;</i>Elastic管理</a>
             </div>
             <!--end-->
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,11 +19,6 @@
                     </div>
                 </form>
                 <p class="navbar-text">集群健康状态：<span id="elastic-status" :style="statusStyleObject">{{status}}</span></p>
-                <ul class="nav navbar-nav pull-right">
-                    <li>
-                        <a v-bind:href="githubUrl" target="_blank"><i class="fa fa-github"></i> Star On GitHub</a>
-                    </li>
-                </ul>
             </div>
         </div>
     </nav>
